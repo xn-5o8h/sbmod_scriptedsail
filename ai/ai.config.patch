@@ -1,0 +1,95 @@
+//This S.A.I.L. merges the chip's data to the player specie's data to the default values.
+//This means that, if you want to change dialogs, portrait or anything in there,
+//you can either make a custom chip, copy-paste the default values inside, then change them;
+//or patch this file's /species/yourSpecie to set the values for your specie.
+
+//You shouldn't patch the default values, as that'll affect every species.
+[
+  {
+    "op": "add",
+    "path": "/scanlinesFrames",
+    "value": "scanlines.png"
+  },
+
+  {
+    "op": "add",
+    "path": "/title",
+    "value": "S.A.I.L."
+  },
+
+  {
+    "op": "add",
+    "path": "/subtitle",
+    "value": "Ship-based Artificial Intelligence Lattice"
+  },
+
+  {
+    "op": "add",
+    "path": "/titleIcon",
+    "value": "/interface/ai/AIicon.png"
+  },
+
+  {
+    "op": "add",
+    "path": "/chatterSound",
+    "value": "/sfx/interface/aichatter1_loop.ogg"
+  },
+
+  {
+    "op": "add",
+    "path": "/interfaceText",
+    "value": {
+      "breadcrumbLeftPadding": 2,
+      "breadcrumbRightPadding": 6,
+      "homeBreadcrumbText": "HOME",
+      "crewBreadcrumbText": "CREW",
+      "configBreadcrumbText": "CONFIG",
+      "missionBreadcrumbText": "MISSION",
+
+      "buttonBackText": "BACK",
+      "buttonOpenCraftingText": "Open A.I. chip crafting",
+      "buttonOpenSlotText": "Open A.I. chip slot",
+      "buttonCloseSlotText": "Close A.I. chip slot",
+      "buttonFallbackText": "Fallback to vanilla S.A.I.L.",
+      "buttonMissionsText": "MISSIONS",
+      "buttonCrewText": "CREW",
+      "buttonCancelText": "CANCEL",
+      "buttonDismissText": "DISMISS",
+      "buttonDeployText": "DEPLOY",
+
+      "overwrittingConfText": ">Overwritting configuration.................",
+      "aiDataText": "^gray;You can install an A.I. chip here to customize S.A.I.L.",
+      "fallbackText": "^gray;Use this if you can't find a mission or crewmember.",
+      "fallbackActivatedText": "^gray;The fallback interface will be loaded upon next interaction.",
+
+      "craftingTitle": "S.A.I.L. A.I. chip crafting",
+      "craftingSubtitle": "",
+      "craftingSchematicsTxt": "SCHEMATICS",
+      "craftingProductTxt": "RESULT",
+      "buttonCraft": "CRAFT",
+      "buttonStopCraft": "STOP",
+      "craftingMatAvailTxt": "MATERIALS AVAILABLE",
+
+      "defaultRecruitDescription": "> No data.",
+      "defaultRecruitName": "Cannon Fodder"
+    }
+  },
+
+  {
+    "op": "replace",
+    "path": "/scanlineAnimation/frames",
+    "value": "<image>:<index>"
+  },
+
+  {
+    "op": "replace",
+    "path": "/noCrewSpeech/animation",
+    "value": "refuse"
+  },
+
+  {
+    "op": "replace",
+    "path": "/noMissionsSpeech/animation",
+    "value": "refuse"
+  }
+]

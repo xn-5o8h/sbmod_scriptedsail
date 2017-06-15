@@ -1,0 +1,15 @@
+{
+  "itemName" : "interfaceopener",
+  "shortdescription" : "A disgusting hack",
+  "description" : "you saw nothing",
+  "price" : 1,
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "Tool",
+  "twoHanded" : false,
+  "itemTags" : ["tool"],
+  "inventoryIcon" : "/assetmissing.png",
+
+  "scripts" : ["interfaceopener.lua"],
+  "scriptDelta" : 5
+}
