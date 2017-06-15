@@ -1,4 +1,5 @@
 [
 	{ "op": "add", "path": "/companionsConfig/scripts/-", "value": "/scripts/companionhandler.lua" },
-	{ "op": "add", "path": "/statusControllerSettings/primaryScriptSources/-", "value": "/scripts/modDefaults.lua" }
+	{ "op": "add", "path": "/statusControllerSettings/primaryScriptSources/-", "value": "/scripts/modDefaults.lua" },
+	{ "op": "add", "path": "/defaultBlueprints/tier1/-", "value": { "item" : "screwdriver" } }
 ]
