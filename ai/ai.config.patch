@@ -57,7 +57,7 @@
       "buttonDismissText": "DISMISS",
       "buttonDeployText": "DEPLOY",
 
-      "overwrittingConfText": ">Overwritting configuration.................",
+      "overwrittingConfText": ">Overwriting configuration.................",
       "aiDataText": "^gray;You can install an A.I. chip here to customize S.A.I.L.",
       "fallbackText": "^gray;Use this if you can't find a mission or crewmember.",
       "fallbackActivatedText": "^gray;The fallback interface will be loaded upon next interaction.",

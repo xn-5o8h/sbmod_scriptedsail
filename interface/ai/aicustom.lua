@@ -79,8 +79,9 @@ function loadConf()
   widget.setButtonEnabled("showCrew", true)
   widget.setButtonEnabled("showMissions", true)
 
-  --local breadcrumbendsize = root.imageSize('/interface/ai/breadcrumbend.png')
-  --widget.setSize('homeBreadcrumbBg', {hobo.getLengthUtf8(self.config.interfaceText.homeBreadcrumbText, 8) + breadcrumbendsize[1] + 2*2, 9}) --breadcrumbend + 2px *2 // need to test with other language font (hi asia)
+  self.fontSize = root.assetJson("/interface.config").font.baseSize
+  sb.logInfo("%s", self.fontSize)
+
   setBreadcrumb('homeBreadcrumb', nil, self.config.interfaceText.homeBreadcrumbText)
 
   widget.setText("showCrew", self.config.interfaceText.buttonCrewText)
@@ -592,28 +593,25 @@ function goBack()
 end
 
 function setBreadcrumb(breadcrumb, prevBreadcrumb, text)
-
   widget.setText(breadcrumb, text)
   widget.setData(breadcrumb, text)
 
-  local breadcrumbendsize = {0}
+  local mult = 1
   if prevBreadcrumb then
-    local breadcrumbendsize = root.imageSize('/interface/ai/breadcrumbend.png')
+    mult = 2 --I don't feel like this is very ellegant but ahwell
 
     prevBcPos = widget.getPosition(prevBreadcrumb .. 'Bg')
     prevBcSize = widget.getSize(prevBreadcrumb .. 'Bg')
 
     widget.setPosition(breadcrumb, {prevBcSize[1] + prevBcPos[1] + 2, prevBcPos[2] - 1})
 
-    -- -4 to hide the breadcrumbbeginning, we add 4 later
-    widget.setPosition(breadcrumb .. 'Bg', {prevBcSize[1] - 4 + prevBcPos[1], prevBcPos[2]}) 
+    widget.setPosition(breadcrumb .. 'Bg', {prevBcPos[1] + prevBcSize[1] - self.config.interfaceText.breadcrumbRightPadding - self.config.interfaceText.breadcrumbLeftPadding, prevBcPos[2]}) 
   end
 
   widget.setVisible(breadcrumb, true)
   widget.setVisible(breadcrumb .. 'Bg', true)
 
-  --breadcbrumbbegin + breadcrumbend * 2 + 2px border*2 ?
-  widget.setSize(breadcrumb .. 'Bg', {hobo.getLengthUtf8(text, 8) + breadcrumbendsize[1]*2 + 2*2, 9})
+  widget.setSize(breadcrumb .. 'Bg', {hobo.getLengthUtf8(text, self.fontSize) + self.config.interfaceText.breadcrumbRightPadding * mult + self.config.interfaceText.breadcrumbLeftPadding * mult, 9})
 end
 
 function setWidgets(config)
@@ -797,4 +795,11 @@ function rgbToHex(rgb) --https://gist.github.com/marceloCodget/3862929
   end
 
   return hexadecimal
+end
+
+
+function utf8.sub(s,i,j) --godbless Magicks and https://stackoverflow.com/questions/43138867/lua-unicode-using-string-sub-with-two-byted-chars
+    i=utf8.offset(s,i)
+    j=utf8.offset(s,j+1)-1
+    return string.sub(s,i,j)
 end
