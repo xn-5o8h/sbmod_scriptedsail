@@ -80,7 +80,6 @@ function loadConf()
   widget.setButtonEnabled("showMissions", true)
 
   self.fontSize = root.assetJson("/interface.config").font.baseSize
-  sb.logInfo("%s", self.fontSize)
 
   setBreadcrumb('homeBreadcrumb', nil, self.config.interfaceText.homeBreadcrumbText)
 
