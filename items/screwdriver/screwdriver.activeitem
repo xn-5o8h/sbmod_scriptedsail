@@ -2,7 +2,7 @@
   "itemName" : "screwdriver",
   "shortdescription" : "Screwdriver",
   "description" : "Allows me to open S.A.I.L.'s front panel. What do you mean, \"sonic\"?",
-  "price" : 1000,
+  "price" : 1,
   "maxStack" : 1,
   "rarity" : "legendary",
   "category" : "Tool",
