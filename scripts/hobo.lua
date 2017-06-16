@@ -54,12 +54,6 @@ hobo.charWidths = {
   -- û   ü   ý   þ   ÿ                         þ = Cat Face
     10,10,10,15,10 }
 
-function utf8.sub(s,i,j) --godbless Magicks and https://stackoverflow.com/questions/43138867/lua-unicode-using-string-sub-with-two-byted-chars
-    i=utf8.offset(s,i)
-    j=utf8.offset(s,j+1)-1
-    return string.sub(s,i,j)
-end
-
 function hobo.getLengthUtf8(text,fontSize)
   local fontSize = fontSize or 16
   local width = 0
@@ -69,7 +63,7 @@ function hobo.getLengthUtf8(text,fontSize)
     if character <= 256 then
       width = width + hobo.charWidths[character]
     else
-      width = width + 13.5  --made it slightly larger because it was fitting better with my tests in japanese, 
+      width = width + 11  --made it slightly larger because it was fitting better with my tests in japanese, 
     end      --I believe if different languages need different default then should check for codepoint range
   end
   return width * fontSize / 16
