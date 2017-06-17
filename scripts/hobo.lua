@@ -58,7 +58,7 @@ function hobo.getLengthUtf8(text,fontSize)
   local fontSize = fontSize or 16
   local width = 0
   for i=1, utf8.len(text),1 do
-    offset = utf8.offset(text, i)
+    local offset = utf8.offset(text, i)
     local character = utf8.codepoint(text, offset, offset)
     if character <= 256 then
       width = width + hobo.charWidths[character]

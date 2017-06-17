@@ -5,7 +5,7 @@ function init()
 	self.targetId = nil
 
 	--that's kinda messy but ahwell
-	message.setHandler("gibTargetUId", function() if self.targetId then return world.entityUniqueId(self.targetId) end end)
+	message.setHandler("gibTargetUId", function() if self.targetId then return world.entityUniqueId(self.targetId) or self.targetId end end)
 end
 
 function activate()

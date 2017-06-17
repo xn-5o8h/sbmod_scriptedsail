@@ -1,7 +1,7 @@
 CSAILoldInit = init
 
 function init()
-	CSAILoldInit()
+	if CSAILoldInit then CSAILoldInit() end
   object.setConfigParameter("retainScriptStorageInItem", true)
 	self.fallback = false
 	storage.data = storage.data or {}

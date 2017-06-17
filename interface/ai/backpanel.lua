@@ -31,7 +31,7 @@ function itemSlot(widgetName)
     local objectConfig = root.itemConfig(swapItem)
     local imageConfig = nil
     if swapItem then
-      if objectConfig.config.uniqueId ~= self.techstationId then return end
+      if objectConfig.config.uniqueId ~= "techstation" then return end
       --I could probably get all those datas from the object's script and send the itemDescriptor directly but rip
       imageConfig = objectConfig.config.orientations[1] 
       imageConfig.imagePath = objectConfig.directory .. imageConfig.imageLayers[1].image or imageConfig.imageLayers[2].image
