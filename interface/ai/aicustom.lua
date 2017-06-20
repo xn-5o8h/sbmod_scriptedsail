@@ -27,8 +27,6 @@ function init()
   self.scanlineAnimationTimer = 0
 
   loadConf()
-  --local imageconfig = config.getParameter("orientations")[1].imageLayers[2]
-  --world.sendEntityMessage(pane.sourceEntity(), 'setImage', imageconfig.image, imageconfig.frames)
 end
 
 function loadConf()
@@ -55,7 +53,6 @@ function loadConf()
   self.getDataPromise = nil
 
   self.config = root.assetJson("/ai/ai.config")
-  --local specieConfig = self.config.species[player.species()] or self.config.species['human']
   self.config = util.mergeTable(self.config, self.config.species[player.species()] or self.config.species['human'])
   self.config.species = nil
 
@@ -131,29 +128,29 @@ function update()
   self.deployProgress = manageButtonProgressThingies(self.deployProgress, deploy, 'missionsRect.missionSelectRect.', 'startMission', 'startMissionProgress')
 
   self.aiCanvas:clear()
-  self.animationTimer = updatePortrait(self.config.aiAnimations[self.animation], self.animationTimer, self.config.aiFrames)
-  self.staticAnimationTimer = updatePortrait(self.config.staticAnimation, self.staticAnimationTimer, self.config.staticFrames, '?multiply=' .. rgbToHex({255, 255, 255, math.floor(self.config.staticOpacity * 255)}))
-  self.scanlineAnimationTimer = updatePortrait(self.config.scanlineAnimation, self.scanlineAnimationTimer, self.config.scanlinesFrames, '?multiply=' .. rgbToHex({255, 255, 255, math.floor(self.config.scanlineOpacity * 255)}))
+  self.animationTimer = updatePortrait(self.config.aiAnimations[self.animation], self.animationTimer or 0, self.config.aiFrames)
+  self.staticAnimationTimer = updatePortrait(self.config.staticAnimation, self.staticAnimationTimer or 0, self.config.staticFrames, '?multiply=' .. rgbToHex({255, 255, 255, math.floor(self.config.staticOpacity * 255)}))
+  self.scanlineAnimationTimer = updatePortrait(self.config.scanlineAnimation, self.scanlineAnimationTimer or 0, self.config.scanlinesFrames, '?multiply=' .. rgbToHex({255, 255, 255, math.floor(self.config.scanlineOpacity * 255)}))
 end
 
 function updatePortrait(animationConfig, timerVariable, imagePath, processing, debug)
-  animationConfig.animationCycle = animationConfig.animationCycle or 0.5
+  animationConfig.animationCycle = animationConfig.animationCycle or 3
   local frame = math.floor((timerVariable / animationConfig.animationCycle) * animationConfig.frameNumber)
   if timerVariable == 0 then frame = 0 end
 
   timerVariable = timerVariable + dt
+
   if timerVariable > animationConfig.animationCycle then
     if animationConfig.mode == 'loopForever' then
-      timerVariable = timerVariable - animationConfig.animationCycle
-    else
-      self.animation = self.config.defaultAnimation
-      return
+      timerVariable = 0
+    elseif animationConfig.mode == 'stop' then
+      timerVariable = animationConfig.animationCycle + 1 --not sure if it's necessary but I don't really want a forever-increasing variable?
+      frame = animationConfig.frameNumber - 1 --frames start at 0 but their count starts at 1 zzzzz
     end
   end
 
   local path = animationConfig.frames:gsub('<image>', imagePath):gsub("<index>", frame) .. (processing or '')
   self.aiCanvas:drawImage('/ai/' .. path, {0, 0})
-
 
   if debug then
     self.aiCanvas:drawText(
@@ -187,13 +184,6 @@ function manageButtonProgressThingies(progressValue, callback, widgetPath, butto
   end
 
   return progressValue
-end
-
-function utf8.sub(s,i,j) --godbless Magicks and https://stackoverflow.com/questions/43138867/lua-unicode-using-string-sub-with-two-byted-chars
-   -- sb.logInfo("utf8sub aaa what %s %s %s", s, i, j)
-    i=utf8.offset(s,i)
-    j=utf8.offset(s,j+1)-1
-    return string.sub(s,i,j)
 end
 
 function writeStuff(widgetName, dialog)

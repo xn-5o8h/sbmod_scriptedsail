@@ -91,5 +91,17 @@
     "op": "replace",
     "path": "/noMissionsSpeech/animation",
     "value": "refuse"
+  },
+
+  {
+      "op": "add",
+      "path": "/aiAnimations/refuse/animationCycle",
+      "value": 3
+  },
+
+  {
+      "op": "add",
+      "path": "/aiAnimations/unique/animationCycle",
+      "value": 0.8
   }
 ]
