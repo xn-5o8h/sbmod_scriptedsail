@@ -1,0 +1,21 @@
+{
+  "itemName" : "glitchaichip",
+
+  "shortdescription" : "Vanilla Glitch A.I. Chip",
+  "description" : "A Glitch A.I. chip. Can be installed on S.A.I.L.'s terminal.",
+
+  "rarity" : "Legendary",
+  "category" : "A.I. Chip",
+  "price" : 20,
+
+  "tooltipKind" : "mm",
+  "largeImage" : "/ai/portraits/glitchquestportrait.png",
+  "inventoryIcon" : "/ai/ai.png",
+
+  "aiData" : {
+    "aiFrames" : "GlitchAI.png",
+    "staticFrames" : "staticGlitch.png",
+    "portraitFrames": "portraits/glitchportrait.png",
+    "questPortrait": "glitch"
+  }
+}

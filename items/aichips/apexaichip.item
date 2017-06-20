@@ -1,0 +1,21 @@
+{
+  "itemName" : "apexaichip",
+
+  "shortdescription" : "Vanilla Apex A.I. Chip",
+  "description" : "An Apex A.I. chip. Can be installed on S.A.I.L.'s terminal.",
+
+  "rarity" : "Legendary",
+  "category" : "A.I. Chip",
+  "price" : 20,
+
+  "tooltipKind" : "mm",
+  "largeImage" : "/ai/portraits/apexquestportrait.png",
+  "inventoryIcon" : "/ai/ai.png",
+
+  "aiData" : {
+    "aiFrames" : "ApexAI.png",
+    "staticFrames" : "staticApex.png",
+    "portraitFrames": "portraits/apexportrait.png",
+    "questPortrait": "apex"
+  }
+}
