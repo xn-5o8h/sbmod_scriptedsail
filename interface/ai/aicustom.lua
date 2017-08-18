@@ -251,9 +251,9 @@ function showMissions()
       widget.setData('missionsRect.scrollArea.missionItemList.' .. listItem, mission)
       widget.setImage('missionsRect.scrollArea.missionItemList.' .. listItem .. '.itemIcon', '/ai/' .. mission.icon)
       if mission.repeated then
-        widget.setText('missionsRect.scrollArea.missionItemList.' .. listItem .. '.itemName', mission.buttonText)
-      else
         widget.setText('missionsRect.scrollArea.missionItemList.' .. listItem .. '.itemName', mission.repeatButtonText)
+      else
+        widget.setText('missionsRect.scrollArea.missionItemList.' .. listItem .. '.itemName', mission.buttonText)
       end
     end
   end
