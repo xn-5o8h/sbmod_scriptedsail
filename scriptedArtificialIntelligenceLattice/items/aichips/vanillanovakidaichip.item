@@ -1,0 +1,21 @@
+{
+  "itemName" : "vanillanovakidaichip",
+
+  "shortdescription" : "Vanilla Novakid A.I. Chip",
+  "description" : "A Novakid A.I. chip. Can be installed on S.A.I.L.'s terminal.",
+
+  "rarity" : "Legendary",
+  "category" : "A.I. Chip",
+  "price" : 20,
+
+  "tooltipKind" : "mm",
+  "largeImage" : "/ai/portraits/novakidquestportrait.png",
+  "inventoryIcon" : "/ai/ai.png",
+
+  "aiData" : {
+    "aiFrames" : "NovakidAI.png",
+    "staticFrames" : "staticGlitch.png",
+    "portraitFrames": "portraits/novakidportrait.png",
+    "questPortrait": "novakid"
+  }
+}

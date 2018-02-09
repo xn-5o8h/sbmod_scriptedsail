@@ -1,0 +1,168 @@
+{
+  "itemName": "defaultsettingsaichip",
+
+  "shortdescription": "Default Settings A.I. Chip",
+  "description": "An A.I. chip that stores default settings, to help override uncommon parameters. Can be installed on S.A.I.L.'s terminal.",
+
+  "rarity": "Legendary",
+  "category": "A.I. Chip",
+  "price": 20,
+
+  "tooltipKind": "mm",
+  "largeImage": "/ai/ai.png",
+  "inventoryIcon": "/ai/ai.png",
+
+  "aiData": {
+    "title": "S.A.I.L.",
+    "subtitle": "Ship-based Artificial Intelligence Lattice",
+  
+    "aiAnimations": {
+      "idle": {
+        "frames": "<image>:idle.<index>",
+        "mode": "loopForever",
+        "frameNumber": 21,
+        "animationCycle": 3.0,
+        "centered": false
+      },
+
+      "blink": {
+        "frames": "<image>:blink.<index>",
+        "mode": "stop",
+        "frameNumber": 1,
+        "centered": false
+      },
+
+      "talk": {
+        "frames": "<image>:talk.<index>",
+        "mode": "loopForever",
+        "frameNumber": 2,
+        "animationCycle": 0.5,
+        "centered": false
+      },
+
+      "yell": {
+        "frames": "<image>:yell.<index>",
+        "mode": "loopForever",
+        "frameNumber": 2,
+        "animationCycle": 0.5,
+        "centered": false
+      },
+
+      "refuse": {
+        "frames": "<image>:refuse.<index>",
+        "mode": "loopForever",
+        "frameNumber": 8,
+        "centered": false
+      },
+
+      "unique": {
+        "frames": "<image>:unique.<index>",
+        "mode": "loopForever",
+        "frameNumber": 8,
+        "centered": false
+      }
+    },
+
+    "defaultAnimation": "idle",
+
+    "staticAnimation": {
+      "frames": "<image>:<index>",
+      "mode": "loopForever",
+      "animationCycle": 0.111,
+      "frameNumber": 4,
+      "centered": false
+    },
+
+    "scanlineAnimation": {
+      "frames": "<image>:<index>",
+      "mode": "loopForever",
+      "animationCycle": 0.999,
+      "frameNumber": 14,
+      "centered": false
+    },
+
+    "staticOpacity": 0.2,
+    "scanlineOpacity": 0.5,
+    "charactersPerSecond": 45,
+
+    "noCrewSpeech": {
+      "animation": "refuse",
+      "speedModifier": 0.7
+    },
+
+    "noMissionsSpeech": {
+      "animation": "refuse",
+      "speedModifier": 0.7
+    },
+
+    "missionsText": {
+      "missionhuman1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionfloran1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionhylotl1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionapex1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionavian1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionglitch1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionpenguin1": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      },
+      "missionpenguin2": {
+        "selectSpeech": {
+          "animation": "talk",
+          "speedModifier": 1.0
+        }
+      }
+    },
+
+    "shipStatus": {
+      "0": {
+        "animation": "unique",
+        "speedModifier": 0.1
+      },
+      "1": {
+        "animation": "talk",
+        "speedModifier": 0.7
+      },
+      "2": {
+        "animation": "talk",
+        "speedModifier": 0.7
+      },
+      "3": {
+        "animation": "talk",
+        "speedModifier": 0.7
+      }
+    }
+  }
+}

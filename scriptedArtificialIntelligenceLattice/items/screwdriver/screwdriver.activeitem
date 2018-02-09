@@ -1,0 +1,15 @@
+{
+  "itemName" : "screwdriver",
+  "shortdescription" : "Screwdriver",
+  "description" : "Allows me to open S.A.I.L.'s front panel. What do you mean, \"sonic\"?",
+  "price" : 1,
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "Tool",
+  "twoHanded" : false,
+  "itemTags" : ["tool"],
+  "inventoryIcon" : "screwdriver.png",
+  "baseOffset" : [0.75, 0],
+  "animation" : "screwdriver.animation",
+  "scripts" : ["screwdriver.lua"]
+}

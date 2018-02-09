@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "salvagetier4", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "novakidancientaichip",
+    "count" : 1
+  },
+  "groups" : [ "mod", "aichip" ]
+}
