@@ -4,6 +4,10 @@ Description's on the steam workshop too: http://steamcommunity.com/sharedfiles/f
 
 Tl;dr recoded the hardcoded S.A.I.L. interface in Lua to allow a bit more thingies.
 
+To install, download the archive, and place the "scriptedArtificialIntelligenceLattice" folder in your Starbound/mods/ folder.
+
+
+
 I've considered:
 - Adding a "ship pet" config slot, but Purchasable Pets already does this.
 - Making the config chips be dropped in chests around the universe instead of being craftable, ("Oh cool, I found a new S.A.I.L. chip!", but I didn't wanted to have people who only wanted to customize their S.A.I.L. to be stuck with luck ("hnng, when will I finally find my chip?!"). 
