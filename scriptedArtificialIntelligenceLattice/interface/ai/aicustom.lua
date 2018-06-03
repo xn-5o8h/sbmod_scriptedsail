@@ -7,6 +7,15 @@ require "/scripts/hobo.lua"
 --TODO: lock button for crewmembers to prevent dismissing?
 
 function init()
+  if util.count(root.assetJson("/player.config:statusControllerSettings").primaryScriptSources, "/scripts/fu_tilegroundeffects.lua") > 0 then
+    --hacky, hopefully they never change that script's name
+    sb.logInfo("scriptedSAIL: FU is installed, consider asking them to support your specie's techstation. Loading FU's SAIL...")
+    script.setUpdateDelta(0)
+    player.interact("ScriptPane", "/interface/scripted/fu_sail/customSail.config", pane.sourceEntity())
+    pane.dismiss()
+    return
+  end
+
   setWidgetTable()
   dt = script.updateDt()
 
@@ -647,7 +656,7 @@ function resetidunno()
 end
 
 function close() pane.dismiss() end
-function dismissed() pane.stopAllSounds(self.config.chatterSound) end
+function dismissed() if self.config ~= nil then pane.stopAllSounds(self.config.chatterSound) end end
 
 function setWidgetTable() --dunno if there's a better way to do that but this works for now
   self.lazy = { 
