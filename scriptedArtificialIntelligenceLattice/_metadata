@@ -5,6 +5,7 @@
   "link" : "steam://url/CommunityFilePage/947429656",
   "name" : "scriptedail",
   "priority" : 100,
+  "includes" : ["Inkling Race Mod", "Arachne Race Mod"],
   "steamContentId" : "947429656",
   "tags" : "User Interface",
   "version" : "1.imtiredofchangingthis"
