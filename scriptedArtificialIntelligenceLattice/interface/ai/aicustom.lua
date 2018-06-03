@@ -523,8 +523,8 @@ function aiDataItemSlot(widgetName)
   end
 end
 
-function openAIChipCraft() --this is so hacky godbless 1.3
-  local interactDataThingy = { --I don't really wanna patch that in every interfaces I'm plugging my S.A.I.L. into?
+function openAIChipCraft()
+  local interactData = {
     config = "/interface/windowconfig/craftingmerchant.config",
     --disableTimer = false,
     paneLayoutOverride = {
@@ -543,16 +543,8 @@ function openAIChipCraft() --this is so hacky godbless 1.3
     },
     filter = { "aichip" }
   }
-  player.setSwapSlotItem(root.createItem({
-    name = "interfaceopener",
-    count = 1,
-    parameters = {
-      interactAction = "OpenCraftingInterface",
-      interactData = interactDataThingy,
-      swapItem = player.swapSlotItem(),
-      techStationId = pane.sourceEntity() --thanks based V6, somehow interfaces do a distance check from that entity and it needs to be an object?? starboundpls
-    }
-  }))
+
+  player.interact("OpenCraftingInterface", interactData, pane.sourceEntity())
   pane.dismiss()
 end
 
