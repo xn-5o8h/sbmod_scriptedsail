@@ -1,0 +1,21 @@
+{
+  "itemName" : "originalancientnovakidaichip",
+
+  "shortdescription" : "Ancient Novakid A.I. Chip 1",
+  "description" : "An older model of the Novakid A.I. chip. Can be installed on S.A.I.L.'s terminal.",
+
+  "rarity" : "Legendary",
+  "category" : "A.I. Chip",
+  "price" : 20,
+
+  "tooltipKind" : "mm",
+  "largeImage" : "/ai/portraits/ancientnovakidquestportrait.png",
+  "inventoryIcon" : "/ai/ai.png",
+
+  "aiData" : {
+    "aiFrames" : "AncientNovakidAIOriginal.png",
+    "staticFrames" : "staticGlitch.png",
+    "portraitFrames": "portraits/ancientnovakidquestportrait.png",
+    "questPortrait": "ancientnovakid"
+  }
+}
