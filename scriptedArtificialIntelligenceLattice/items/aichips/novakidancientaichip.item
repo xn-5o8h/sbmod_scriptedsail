@@ -9,11 +9,13 @@
   "price" : 20,
 
   "tooltipKind" : "mm",
-  "largeImage" : "/ai/ai.png",
+  "largeImage" : "/ai/portraits/ancientnovakidquestportrait.png",
   "inventoryIcon" : "/ai/ai.png",
 
   "aiData" : {
     "aiFrames" : "HorseAIold.png",
-    "staticFrames" : "staticGlitch.png"
+    "staticFrames" : "staticGlitch.png",
+    "portraitFrames": "portraits/ancientnovakidportrait.png",
+    "questPortrait": "ancientnovakid"
   }
 }

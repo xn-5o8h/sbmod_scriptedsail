@@ -9,7 +9,7 @@
   "price" : 20,
 
   "tooltipKind" : "mm",
-  "largeImage" : "/ai/ai.png",
+  "largeImage" : "/ai/portraits/ancientapexquestportrait.png",
   "inventoryIcon" : "/ai/ai.png",
 
   "aiData" : {

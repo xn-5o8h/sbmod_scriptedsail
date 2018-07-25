@@ -9,11 +9,13 @@
   "price" : 20,
 
   "tooltipKind" : "mm",
-  "largeImage" : "/ai/ai.png",
+  "largeImage" : "/ai/portraits/ancientavianquestportrait.png",
   "inventoryIcon" : "/ai/ai.png",
 
   "aiData" : {
     "aiFrames" : "AvianAIold.png",
-    "staticFrames" : "staticAvian.png"
+    "staticFrames" : "staticAvian.png",
+    "portraitFrames": "portraits/ancientavianportrait.png",
+    "questPortrait": "ancientavian"
   }
 }

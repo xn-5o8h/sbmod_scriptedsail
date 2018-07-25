@@ -9,11 +9,13 @@
   "price" : 20,
 
   "tooltipKind" : "mm",
-  "largeImage" : "/ai/ai.png",
+  "largeImage" : "/ai/portraits/ancienthylotlquestportrait.png",
   "inventoryIcon" : "/ai/ai.png",
 
   "aiData" : {
     "aiFrames" : "HylotlAIold.png",
-    "staticFrames" : "staticHylotl.png"
+    "staticFrames" : "staticHylotl.png",
+    "portraitFrames": "portraits/ancienthylotlportrait.png",
+    "questPortrait": "ancienthylotl"
   }
 }

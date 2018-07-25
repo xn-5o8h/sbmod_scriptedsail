@@ -9,11 +9,13 @@
   "price" : 20,
 
   "tooltipKind" : "mm",
-  "largeImage" : "/ai/ai.png",
+  "largeImage" : "/ai/portraits/ancientfloranquestportrait.png",
   "inventoryIcon" : "/ai/ai.png",
 
   "aiData" : {
     "aiFrames" : "FloranAIold.png",
-    "staticFrames" : "staticFloran.png"
+    "staticFrames" : "staticFloran.png",
+    "portraitFrames": "portraits/ancientfloranportrait.png",
+    "questPortrait": "ancientfloran"
   }
 }
