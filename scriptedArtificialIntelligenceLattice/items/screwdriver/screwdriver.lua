@@ -26,7 +26,9 @@ function update()
 	if self.rpc then
 		if self.rpc:succeeded() then
 			local rpcResult = self.rpc:result()
-			activeItem.interact(rpcResult[1], rpcResult[2])
+			if rpcResult[1] and rpcResult[2] then
+				activeItem.interact(rpcResult[1], rpcResult[2])
+			end
 		end
 		if self.rpc:finished() then
 			self.rpc = nil
