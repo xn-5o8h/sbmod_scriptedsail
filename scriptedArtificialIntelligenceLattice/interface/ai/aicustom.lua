@@ -7,11 +7,11 @@ require "/scripts/hobo.lua"
 --TODO: lock button for crewmembers to prevent dismissing?
 
 function init()
-  if util.count(root.assetJson("/player.config:statusControllerSettings").primaryScriptSources, "/scripts/fu_tilegroundeffects.lua") > 0 then
-    --hacky, hopefully they never change that script's name
-    sb.logInfo("scriptedSAIL: FU is installed, consider asking them to support your specie's techstation. Loading FU's SAIL...")
+  if root.itemConfig("fu_byostechstation") then
+    sb.logInfo("scriptedSAIL: FU is installed but you're still using Scripted Artificial Intelligence Lattice's interface. Consider asking support for your specie at https://steamcommunity.com/sharedfiles/filedetails/?id=1411331676. Loading FU's SAIL...")
     script.setUpdateDelta(0)
-    player.interact("ScriptPane", "/interface/scripted/fu_sail/customSail.config", pane.sourceEntity())
+    local futechstation = root.assetJson("/objects/ship/fu_byostechstation/fu_byostechstation.object")
+    player.interact(futechstation.interactAction, futechstation.interactData, pane.sourceEntity())
     pane.dismiss()
     return
   end
